@@ -14,9 +14,11 @@ public class Player {
     public void addCard(Card card) {
         hand.add(card);
     }
+
     public List<Card> getHand() {
         return hand;
     }
+
     public int getHandValue() {
         int total = 0;
         int aces = 0;
@@ -33,15 +35,17 @@ public class Player {
         }
         return total;
     }
-    public boolean hasBlackJack () {
+
+    public boolean hasBlackJack() {
         return hand.size() == 2 && getHandValue() == 21;
     }
-    public boolean isBusted () {
+
+    public boolean isBusted() {
         return getHandValue() > 21;
     }
 
     @Override
     public String toString() {
-        return "Hand: " + hand + " Value "+ getHandValue();
+        return "Hand: " + hand + " Value " + getHandValue();
     }
 }

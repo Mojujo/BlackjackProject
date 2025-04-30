@@ -9,6 +9,7 @@ public class DeckTest {
     @Test
     public void testDeck() {
         Deck deck = new Deck();
+
         assertEquals(52, deck.remainingCards());
     }
 
@@ -16,7 +17,7 @@ public class DeckTest {
     public void testShuffle() {
         Deck deck = new Deck();
         Card card = deck.dealCard();
-        assertNotEquals("Ace of Clubs", card.toString());
 
+        assertNotEquals("Ace of Clubs", card.toString());
     }
 }

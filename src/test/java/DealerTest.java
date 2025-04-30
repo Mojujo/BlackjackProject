@@ -4,6 +4,7 @@ import se.mojujo.projektarbete.CardProvider;
 import se.mojujo.projektarbete.Dealer;
 import se.mojujo.projektarbete.Deck;
 import se.mojujo.projektarbete.Player;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -21,12 +22,10 @@ public class DealerTest {
     }
 
     @Test
-    void DealerDealCardsTest () {
-
+    void DealerDealCardsTest() {
         dealer.dealToPlayer(player);
 
         assertEquals(1, player.getHand().size());
         assertEquals(51, deck.remainingCards());
-
     }
 }
