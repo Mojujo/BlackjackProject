@@ -69,6 +69,15 @@ public class PlayerTest {
         assertTrue(player.isBusted());
     }
 
+    @Test
+    void hasBlackJack() {
+        Player player = new Player();
+        player.addCard(new Card("Spades", "Jack"));
+        player.addCard(new Card("Clubs", "Ace"));
+
+        assertTrue(player.hasBlackJack());
+    }
+
 
 
 }
