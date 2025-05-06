@@ -51,9 +51,7 @@ public class Game {
                 System.out.println("Invalid choice");
             }
 
-            if (!player.isBusted()) {
 
-            }
 
 
 
