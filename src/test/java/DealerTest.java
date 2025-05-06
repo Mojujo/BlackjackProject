@@ -52,5 +52,14 @@ public class DealerTest {
 
         assertFalse(dealer.shouldHit());
     }
+
+    @Test
+    void showFirstCardTest () {
+        dealer.addCard(new Card("Spades", "8"));
+        dealer.addCard(new Card("Hearts", "7"));
+
+        assertEquals(15, dealer.getHandValue());
+        assertEquals(8, dealer.showFirstCard().getFaceValue());
+    }
 }
 

@@ -23,5 +23,9 @@ public class Dealer extends Player {
         return (getHandValue() < 17);
     }
 
+    public Card showFirstCard() {
+        return getHand().get(0);
+    }
+
 
 }
