@@ -54,7 +54,7 @@ public class DealerTest {
     }
 
     @Test
-    void showFirstCardTest () {
+    void showFirstCardTest() {
         dealer.addCard(new Card("Spades", "8"));
         dealer.addCard(new Card("Hearts", "7"));
 
