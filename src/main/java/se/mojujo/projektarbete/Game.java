@@ -16,8 +16,6 @@ public class Game {
     }
 
 
-
-
     public void start() {
 
         dealer.dealToPlayer(player);
@@ -29,13 +27,12 @@ public class Game {
         playTurn();
 
 
-
-
-
     }
 
     public void playTurn() {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Dealer's card: " + dealer.showFirstCard());
 
         while (!player.hasBlackJack() && !player.isBusted()) {
             System.out.println("Your hand: " + player);
@@ -50,16 +47,42 @@ public class Game {
             } else {
                 System.out.println("Invalid choice");
             }
-
-
-
-
-
-
-
-
-
+        }
+        if (!player.isBusted()) {
+            dealerTurn();
         }
 
+        displayResult();
+
     }
+
+    public void dealerTurn() {
+        System.out.println("Dealer's turn");
+        dealer.dealToDealer();
+        System.out.println("Dealer's hand: " + dealer);
+
+
+    }
+
+    public void displayResult() {
+        System.out.println("Game over");
+        System.out.println("Final hands:");
+        System.out.println("player: " + player);
+        System.out.println("dealer: " + dealer);
+        if (player.isBusted() || dealer.hasBlackJack()) {
+            System.out.println("Dealer wins!");
+        } else if (player.hasBlackJack() || dealer.isBusted() ) {
+            System.out.println("Player wins!");
+        } else if (dealer.getHandValue() < player.getHandValue()) {
+            System.out.println("Player wins!");
+        } else if (dealer.getHandValue() > player.getHandValue()) {
+            System.out.println("Dealer wins!");
+        }       else {
+            System.out.println("It's a tie!");
+        }
+
+
+
+    }
+
 }

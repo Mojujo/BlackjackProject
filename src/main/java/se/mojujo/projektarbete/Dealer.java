@@ -16,6 +16,7 @@ public class Dealer extends Player {
     public void dealToDealer () {
         while (getHandValue() < 17) {
             addCard(deck.dealCard());
+            System.out.println("Dealer got: " + getHand().getLast());
         }
     }
 

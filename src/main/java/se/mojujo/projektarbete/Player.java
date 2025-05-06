@@ -42,6 +42,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Hand: " + hand + " Value "+ getHandValue();
+        return  hand + " Value "+ getHandValue();
     }
 }
