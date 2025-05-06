@@ -24,7 +24,7 @@ public class Dealer extends Player {
     }
 
     public Card showFirstCard() {
-        return getHand().get(0);
+        return getHand().getFirst();
     }
 
 
