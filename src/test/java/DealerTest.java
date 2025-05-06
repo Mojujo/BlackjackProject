@@ -1,9 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.mojujo.projektarbete.CardProvider;
-import se.mojujo.projektarbete.Dealer;
-import se.mojujo.projektarbete.Deck;
-import se.mojujo.projektarbete.Player;
+import se.mojujo.projektarbete.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -28,5 +26,31 @@ public class DealerTest {
         assertEquals(1, player.getHand().size());
         assertEquals(51, deck.remainingCards());
 
+        dealer.dealToPlayer(dealer);
+
+
+    }
+
+    @Test
+    void DealToDealerTest () {
+        dealer.dealToDealer();
+
+        assertTrue(dealer.getHandValue() >= 17);
+
+    }
+
+    @Test
+    void shouldHitTest () {
+
+
+        dealer.addCard(new Card("Spades", "Queen"));
+        dealer.addCard(new Card("Hearts", "7"));
+
+
+
+
+
+        assertFalse(dealer.shouldHit());
     }
 }
+
