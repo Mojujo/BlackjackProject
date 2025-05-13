@@ -1,6 +1,5 @@
 package se.mojujo.projektarbete.game;
 
-import se.mojujo.projektarbete.card.Card;
 import se.mojujo.projektarbete.card.CardProvider;
 import se.mojujo.projektarbete.model.Dealer;
 import se.mojujo.projektarbete.model.Player;
