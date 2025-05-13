@@ -4,8 +4,6 @@ import se.mojujo.projektarbete.card.CardProvider;
 import se.mojujo.projektarbete.model.Dealer;
 import se.mojujo.projektarbete.model.Player;
 
-import java.util.Scanner;
-
 public class GameLogic {
 
 
@@ -31,26 +29,20 @@ public class GameLogic {
         dealer.dealToPlayer(player);
     }
 
-    public boolean isPlayerTurnOver(String choice) {
-        return choice.equals("stand") || player.hasBlackJack() || player.isBusted();
-    }
-
     public void dealerTurn() {
-        System.out.println("Dealer's turn");
         dealer.dealToDealer();
-        System.out.println("Dealer's hand: " + dealer);
     }
 
     public String determineWinner() {
         if (player.isBusted() || dealer.hasBlackJack()) {
             return ("Dealer Wins!");
-        } else if (player.hasBlackJack() || dealer.isBusted() ) {
+        } else if (player.hasBlackJack() || dealer.isBusted()) {
             return ("Player Wins!");
         } else if (dealer.getHandValue() < player.getHandValue()) {
             return ("Player Wins");
         } else if (dealer.getHandValue() > player.getHandValue()) {
             return ("Dealer Wins");
-        }       else {
+        } else {
             return ("Its a tie!");
         }
     }
