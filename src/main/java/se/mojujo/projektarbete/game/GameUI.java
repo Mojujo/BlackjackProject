@@ -14,6 +14,7 @@ public class GameUI {
     }
 
     public void start() {
+        printRules();
         logic.initialDeal();
         Player player = logic.getPlayer();
         Dealer dealer = logic.getDealer();
@@ -59,7 +60,14 @@ public class GameUI {
     }
 
     public void printRules() {
-
+        System.out.println("""
+                Welcome to the Blackjack Game.
+                On start, you will be dealt 2 cards,
+                Jack, Queen and Kings are worth 10,
+                Aces are worth either 1 or 11, depending on if the ace takes you above 21 score,
+                You must hit or stand; Try to get as close as possible to 21 to win.
+                When the player stands, the dealer will play.
+                """);
     }
 
     public void displayResults() {
