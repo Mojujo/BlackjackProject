@@ -1,23 +1,27 @@
-package se.mojujo.projektarbete;
+package se.mojujo.projektarbete.game;
+
+import se.mojujo.projektarbete.card.Card;
+import se.mojujo.projektarbete.card.CardProvider;
+import se.mojujo.projektarbete.model.Dealer;
+import se.mojujo.projektarbete.model.Player;
 
 import java.util.Scanner;
 
-public class Game {
+public class GameLogic {
 
 
-    private final Deck deck;
+    private final CardProvider deck;
     private final Player player;
     private final Dealer dealer;
 
-    public Game() {
-        this.deck = new Deck();
-        this.player = new Player();
-        this.dealer = new Dealer(deck);
+    public GameLogic(CardProvider deck, Player player, Dealer dealer) {
+        this.deck = deck;
+        this.player = player;
+        this.dealer = dealer;
     }
 
 
     public void start() {
-
         dealer.dealToPlayer(player);
         dealer.dealToPlayer(player);
 
@@ -25,8 +29,6 @@ public class Game {
         dealer.addCard(deck.dealCard());
 
         playTurn();
-
-
     }
 
     public void playTurn() {
@@ -51,9 +53,7 @@ public class Game {
         if (!player.isBusted()) {
             dealerTurn();
         }
-
         displayResult();
-
     }
 
     public void dealerTurn() {

@@ -1,4 +1,4 @@
-package se.mojujo.projektarbete;
+package se.mojujo.projektarbete.card;
 
 public class Card {
     private final String cardSuit;
@@ -14,21 +14,12 @@ public class Card {
         return cardValue + " of " + cardSuit;
     }
 
-    public String getCardValue() {
-        return cardValue;
-    }
-
-    public String getCardSuit() {
-        return cardSuit;
-    }
-
     public int getFaceValue() {
         return switch (cardValue) {
             case "Jack", "Queen", "King" -> 10;
             case "Ace" -> 11;
             default -> Integer.parseInt(cardValue);
         };
-
     }
 }
 

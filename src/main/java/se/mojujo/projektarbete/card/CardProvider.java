@@ -1,4 +1,4 @@
-package se.mojujo.projektarbete;
+package se.mojujo.projektarbete.card;
 
 public interface CardProvider {
     Card dealCard();

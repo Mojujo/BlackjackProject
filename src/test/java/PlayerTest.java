@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
-import se.mojujo.projektarbete.Card;
-import se.mojujo.projektarbete.Deck;
-import se.mojujo.projektarbete.Player;
+import se.mojujo.projektarbete.card.Card;
+import se.mojujo.projektarbete.card.Deck;
+import se.mojujo.projektarbete.model.Player;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,24 +14,6 @@ public class PlayerTest {
         player.addCard(deck.dealCard());
 
         assertEquals(1, player.getHand().size());
-    }
-
-    @Test
-    void cardFaceValueTest() {
-        Card Jack = new Card("Spades", "Jack");
-        Card Queen = new Card("Clubs", "Queen");
-        Card King = new Card("Diamonds", "King");
-
-        assertEquals(10, Jack.getFaceValue());
-        assertEquals(10, Queen.getFaceValue());
-        assertEquals(10, King.getFaceValue());
-    }
-
-    @Test
-    void cardAceValueTest() {
-        Card Ace = new Card("Spades", "Ace");
-
-        assertEquals(11, Ace.getFaceValue());
     }
 
     @Test

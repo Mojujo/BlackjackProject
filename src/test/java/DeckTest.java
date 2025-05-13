@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import se.mojujo.projektarbete.Card;
-import se.mojujo.projektarbete.Deck;
+import se.mojujo.projektarbete.card.Card;
+import se.mojujo.projektarbete.card.CardProvider;
+import se.mojujo.projektarbete.card.Deck;
 
 public class DeckTest {
 
@@ -15,7 +16,7 @@ public class DeckTest {
 
     @Test
     public void testShuffle() {
-        Deck deck = new Deck();
+        CardProvider deck = new Deck();
         Card card = deck.dealCard();
 
         assertNotEquals("Ace of Clubs", card.toString());

@@ -1,4 +1,6 @@
-package se.mojujo.projektarbete;
+package se.mojujo.projektarbete.model;
+
+import se.mojujo.projektarbete.card.Card;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,15 +10,17 @@ public class Player {
     private final List<Card> hand;
 
     public Player() {
-        this.hand = new ArrayList<Card>();
+        this.hand = new ArrayList<>();
     }
 
     public void addCard(Card card) {
         hand.add(card);
     }
+
     public List<Card> getHand() {
         return hand;
     }
+
     public int getHandValue() {
         int total = 0;
         int aces = 0;

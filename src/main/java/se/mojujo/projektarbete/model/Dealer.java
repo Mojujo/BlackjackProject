@@ -1,4 +1,7 @@
-package se.mojujo.projektarbete;
+package se.mojujo.projektarbete.model;
+
+import se.mojujo.projektarbete.card.Card;
+import se.mojujo.projektarbete.card.CardProvider;
 
 public class Dealer extends Player {
 
@@ -27,6 +30,4 @@ public class Dealer extends Player {
     public Card showFirstCard() {
         return getHand().getFirst();
     }
-
-
 }
