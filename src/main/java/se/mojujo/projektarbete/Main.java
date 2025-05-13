@@ -14,7 +14,6 @@ public class Main {
 
         GameLogic game = new GameLogic(deck, player, dealer);
 
-        game.start();
+        game.initialDeal();
     }
-
 }

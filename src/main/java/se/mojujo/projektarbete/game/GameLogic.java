@@ -19,8 +19,7 @@ public class GameLogic {
         this.dealer = dealer;
     }
 
-
-    public void start() {
+    public void initialDeal() {
         dealer.dealToPlayer(player);
         dealer.dealToPlayer(player);
 
@@ -28,6 +27,10 @@ public class GameLogic {
         dealer.addCard(deck.dealCard());
 
         playTurn();
+    }
+
+    public void playerHits() {
+        dealer.dealToPlayer(player);
     }
 
     public void playTurn() {
@@ -59,8 +62,6 @@ public class GameLogic {
         System.out.println("Dealer's turn");
         dealer.dealToDealer();
         System.out.println("Dealer's hand: " + dealer);
-
-
     }
 
     public void displayResult() {
@@ -79,9 +80,18 @@ public class GameLogic {
         }       else {
             System.out.println("It's a tie!");
         }
-
-
-
     }
 
+    public String determineWinner() {
+
+        return "";
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Dealer getDealer() {
+        return dealer;
+    }
 }
